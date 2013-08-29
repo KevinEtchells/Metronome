@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		
+		<title>Metronome</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
+		
+		<style>
+			body {padding-top: 50px;}
+			a.navbar-brand {font-size: 20pt;}
+			div.container {padding: 15px;}
+			img {margin-right: 10px;}
+			select {font-size: 12pt; padding: 5px; width: 49%;}
+			select.right {float: right;}
+			#containerMain .btn {font-size: 14pt;}
+			#containerHelp {display: none;}
+			ul {padding-left: 15px;}
+			ul>li {margin-bottom: 15px;}
+		</style>
+
+	</head>
+	<body>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<p id="buttonHelp" class="navbar-text pull-left"><span id="helpIcon" class="glyphicon glyphicon-question-sign"></span></p>
+			<a href="#" class="navbar-brand">Metronome</a>
+		</div>
+
+		<div id="containerMain" class="container">
+			<label for="bpm">Beats per minute</label>
+			<div class="input-group">
+				<img id="note" src="resources/Crotchet.jpg" height="36px"/>
+				<span id="bpmMinus" class="input-group-addon">-</span>
+				<input id="bpm" type="number" class="form-control"/>
+				<span id="bpmAdd" class="input-group-addon">+</span>
+			</div>
+			
+			<br/>
+			<button type="button" class="btn btn-default btn-block" id="tapTempo">Tap Tempo</button>
+			<br/>
+			
+			<label>Time signature</label>
+			<br/>
+			<select id="numerator">
+			   <option value="1">1</option>
+			   <option value="2">2</option>
+			   <option value="3">3</option>
+			   <option value="4" selected="selected">4</option>
+			   <option value="5">5</option>
+			   <option value="6">6</option>
+			   <option value="7">7</option>
+			   <option value="8">8</option>
+			   <option value="9">9</option>
+			   <option value="10">10</option>
+			   <option value="11">11</option>
+			   <option value="12">12</option>
+			</select>
+			<select id="denominator" class="right">
+			   <option value="4">4</option>
+			   <option value="8">8</option>
+			</select>
+
+			<div class="checkbox">
+				<label>
+					<input id="soundOn" type="checkbox"><strong>Sound on</strong>
+				</label>
+			</div>
+
+			<h1 id="beat" class="text-center">1</h1>
+
+			<button type="button" class="btn btn-default btn-block" id="startStop">Start</button>
+
+		</div>
+		
+		<div id="containerHelp" class="container">
+			<ul>
+				<li>Beats per minute can be set in one of three ways:
+					<ol>
+						<li>Entering a number directly into the top input box
+						<li>Pressing the '+' and '-' buttons either side of the input box</li>
+						<li>Tapping the 'Tap Tempo' button two or more times</li></li>
+					</ol>
+				</li>
+				<li>The time signature defaults to 4/4, but can be changed to any simple (4) or compound (8) time required.</li>
+				<li>Beats per minute are measure either in crotchet beats (simple time) or dotted crotchet beats (compound time).</li>
+			</ul>
+			
+			<button id="buttonBack" type="button" class="btn btn-default btn-xs">Back</button>
+		</div>
+		
+
+		<audio id="soundHigh" mozaudiochannel="normal" src="resources/high.ogg" preload="auto"></audio>
+		<audio id="soundLow" mozaudiochannel="normal" src="resources/low.ogg" preload="auto"></audio>
+
+		<script type="text/javascript" src="js/main.js" ></script> 
+
+	</body>
+</html>

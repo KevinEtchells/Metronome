@@ -1,0 +1,15 @@
+{
+	"version": "0.4",
+	"name": "Metronome",
+	"description": "Metronome App",
+	"icons": {
+		"60": "/resources/icon-60.png",
+		"128": "/resources/icon-128.png"
+	},
+	"developer": {
+		"name": "Kevin Etchells",
+		"url": "https://github.com/KevinEtchells"
+	},
+	"launch_path": "/index.html",
+	"orientation": ["portrait-primary"]
+}
